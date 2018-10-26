@@ -14,4 +14,4 @@ Eddy current creates a magnetic field opposed. (Lenz's Law)
 
 Eddy current is usually unwanted at transformer, inductor and electric motors because of losses. Also, there are some conservation method. (if you are interested in, search the 'Lamination'.)
 
-![Basic Representation of Eddy Current in Constant Magnetic Field with moving conductors] (C:\Users\enes_\Desktop\Research League- Fall\EE361\Images\EddyCurrent.PNG)
+![Basic Representation of Eddy Current in Constant Magnetic Field with moving conductors] (https://github.com/EnesAyaz/EE361/blob/master/Images/EddyCurrent.PNG)
