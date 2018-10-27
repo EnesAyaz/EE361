@@ -14,7 +14,7 @@ Eddy current creates a magnetic field opposed. (Lenz's Law)
 
 Eddy current is usually unwanted at transformer, inductor and electric motors because of power losses. Also, there are some conservation method. (if you are interested in, search the 'Lamination'.) However, there are more applications such as electromagnetic braking, identification of metals, attractive effects, vibration and position sensing,  Levitation (Repulsive effects).
 
-![Basic Representation of Eddy Current in Constant Magnetic Field with moving conductors] (/EE361/Images/EddyCurrent.PNG)
+![Basic Representation of Eddy Current in Constant Magnetic Field with moving conductors] (https://github.com/EnesAyaz/EE361/blob/master/Images/EddyCurrent.PNG)
 
 Levitation is our interested area at the demo.
 
@@ -25,9 +25,9 @@ In addition, the repulsive effects are used to overcome gravity at some applicat
 
 Our setup was created to observe the repulsive effects of eddy current. Setup consists of a inductor ( creating magnetic field) and a aluminium surface (conductors which contains 'Eddy Current'). The magnetic field is time-varying magnetic field thanks to AC excitations. Faraday's and Lenz's Law declare that eddy currents are created on conductor and these currents create opposite magnetic fields. Thus, repulsive effects occur and the inductor floats at air.
 
-![Basic Representation of Magnetic Levitation] (/EE361/Images/Levitation1.PNG)
+![Basic Representation of Magnetic Levitation] (https://github.com/EnesAyaz/EE361/blob/master/Images/Levitation1.PNG)
 
-![Basic Representation of Setup] (/EE361/Images/Levitation.PNG)
+![Basic Representation of Setup] (https://github.com/EnesAyaz/EE361/blob/master/Images/Levitation.PNG)
 
 References:
 * Princeton.edu. (2018). [online] Available at: https://www.princeton.edu/ssp/joseph-henry-project/eddy-currents/eddy_wiki.pdf [Accessed 27 Oct. 2018].
