@@ -1,0 +1,423 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      --><title>solution_hw1</title><meta name="generator" content="MATLAB 9.4"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2019-03-10"><meta name="DC.source" content="solution_hw1.m"><style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:0px; font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#000; line-height:140%; background:#fff none; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img, h1 img, h2 img { margin-bottom:0px; } 
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:square; }
+
+.content { font-size:1.2em; line-height:140%; padding: 20px; }
+
+pre, code { font-size:12px; }
+tt { font-size: 1.2em; }
+pre { margin:0px 0px 20px; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+pre.error { color:red; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
+
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style></head><body><div class="content"><h1></h1><!--introduction--><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#1">EE362 HW#1</a></li><li><a href="#2">NAME: <i>SOLUTION</i></a></li><li><a href="#3">STUDENT NUMBER: 123456</a></li></ul></div><h2 id="1">EE362 HW#1</h2><h2 id="2">NAME: <i>SOLUTION</i></h2><h2 id="3">STUDENT NUMBER: 123456</h2><p>Q.1)</p><pre class="codeinput"><span class="comment">% PART A</span>
+</pre><p>a) Pole number is 2 (see figure).</p><pre class="codeinput">pole = 2;
+</pre><p>b) There are a total of 30 slots in one layer.</p><pre class="codeinput">slot_number = 30;
+</pre><p>c) Electrical angle of one slot is: <img src="solution_hw1_eq10438731643107942050.png" alt="$slot-angle = 2\pi/slot-number = \pi/15$"></p><pre class="codeinput">slot_angle = 2*pi/slot_number;
+</pre><p>d) Phase belt angle is the electrical angle for one pole of one phase <img src="solution_hw1_eq03496552199780162347.png" alt="$Phase-belt = 2\pi/2pole/3phase = pi/3$"></p><pre class="codeinput">phase = 3;
+phase_belt = 2*pi/(pole*phase);
+</pre><p>e) Number of slots per phase per pole is: <img src="solution_hw1_eq06774833768260325178.png" alt="$q=slot-number/pole/phase=5$"></p><pre class="codeinput">q = slot_number/(phase*pole);
+</pre><p>f) Coil span is the angle spanning one coil: <img src="solution_hw1_eq07657233533591063549.png" alt="$\lambda$"> = <img src="solution_hw1_eq00634150256536465418.png" alt="$12\pi/15 = 4\pi/5$"></p><pre class="codeinput">coil_span = pi*4/5;
+</pre><p>g) Total number of series turns per phase: <img src="solution_hw1_eq10798281729396419039.png" alt="$N_{ph} = turn-in-one-coil x layer x slot-number$"></p><p><img src="solution_hw1_eq13647564586365909891.png" alt="$N_{ph} = 8 x 2 x 5 = 80$"></p><pre class="codeinput">conductor = 8;
+layer = 2;
+Nph = q*conductor*layer*(pole/2);
+</pre><p>h) Distribution factor: <img src="solution_hw1_eq00018371239153896118.png" alt="$k_d = 0.9567$"></p><pre class="codeinput">kd = sin(q*slot_angle/2)/(q*sin(slot_angle/2));
+</pre><p>i) Pitch factor: <img src="solution_hw1_eq02772284604495384526.png" alt="$k_c = 0.9511$"></p><pre class="codeinput">kc = sin(coil_span/2);
+</pre><p>j) Winding factor: <img src="solution_hw1_eq07661677151571770275.png" alt="$k_w = 0.91$"></p><pre class="codeinput">kw = kd*kc;
+</pre><p>k) Mechanical speed of the air gap MMF: Nr = 3000 rpm</p><pre class="codeinput">frequency = 50;
+Nr = 120*frequency/pole;
+</pre><p>PART B</p><p>Parts a, b, c, d)</p><pre class="codeinput">peak_current = 2; <span class="comment">% Amps</span>
+
+parts = 4;
+
+<span class="comment">% Define MMF components</span>
+mmfa = zeros(parts,slot_number);
+mmfb = zeros(parts,slot_number);
+mmfc = zeros(parts,slot_number);
+mmftotal = zeros(parts,slot_number);
+
+<span class="comment">% Time array is the time instants at which MMF will be calculated</span>
+time_array = [0,6.67e-3,10e-3,13.33e-3];
+
+<span class="keyword">for</span> l = 1:parts
+
+    <span class="comment">% Define the time according the index l</span>
+    time = time_array(l);
+
+    <span class="comment">% Calculate the phase currents at that time instant</span>
+    Ia = peak_current*cos(2*pi*frequency*time);
+    Ib = peak_current*cos(2*pi*50*time-2*pi/3);
+    Ic = peak_current*cos(2*pi*50*time-4*pi/3);
+
+    MMFa_layer1 = conductor*[Ia,Ia,Ia,Ia,Ia,0,0,0,0,0,0,0,0,0,0,-Ia,-Ia,<span class="keyword">...</span>
+        -Ia,-Ia,-Ia,0,0,0,0,0,0,0,0,0,0];
+    MMFa_layer2 = conductor*[Ia,Ia,0,0,0,0,0,0,0,0,0,0,-Ia,-Ia,-Ia,-Ia,<span class="keyword">...</span>
+        -Ia,0,0,0,0,0,0,0,0,0,0,Ia,Ia,Ia];
+
+    MMFb_layer1 = conductor*[0,0,0,0,0,0,0,0,0,0,Ib,Ib,Ib,Ib,Ib,0,0,0,0,0,<span class="keyword">...</span>
+        0,0,0,0,0,-Ib,-Ib,-Ib,-Ib,-Ib];
+    MMFb_layer2 = conductor*[0,0,0,0,0,0,0,Ib,Ib,Ib,Ib,Ib,0,0,0,0,0,0,0,0,<span class="keyword">...</span>
+        0,0,-Ib,-Ib,-Ib,-Ib,-Ib,0,0,0];
+
+    MMFc_layer1 = conductor*[0,0,0,0,0,-Ic,-Ic,-Ic,-Ic,-Ic,0,0,0,0,0,0,0,<span class="keyword">...</span>
+        0,0,0,Ic,Ic,Ic,Ic,Ic,0,0,0,0,0];
+    MMFc_layer2 = conductor*[0,0,-Ic,-Ic,-Ic,-Ic,-Ic,0,0,0,0,0,0,0,0,0,0,<span class="keyword">...</span>
+        Ic,Ic,Ic,Ic,Ic,0,0,0,0,0,0,0,0];
+
+    <span class="keyword">for</span> k = 1:slot_number
+        mmfa(l,k) = sum(MMFa_layer1(1:k))+sum(MMFa_layer2(1:k));
+        mmfb(l,k) = sum(MMFb_layer1(1:k))+sum(MMFb_layer2(1:k));
+        mmfc(l,k) = sum(MMFc_layer1(1:k))+sum(MMFc_layer2(1:k));
+    <span class="keyword">end</span>
+
+    <span class="comment">% To get rid of the offset on the MMF waveforms, use the following</span>
+    <span class="comment">% routine for each phase MMF</span>
+    average = sum(mmfa(l,:))/slot_number;
+    mmfa(l,:) = mmfa(l,:)-average;
+    average = sum(mmfb(l,:))/slot_number;
+    mmfb(l,:) = mmfb(l,:)-average;
+    average = sum(mmfc(l,:))/slot_number;
+    mmfc(l,:) = mmfc(l,:)-average;
+
+    mmftotal(l,:) = mmfa(l,:)+mmfb(l,:)+mmfc(l,:);
+
+<span class="keyword">end</span>
+</pre><p>Part e)</p><pre class="codeinput">subplot(4,1,1)
+stairs(mmfa(1,:),<span class="string">'b- '</span>,<span class="string">'Linewidth'</span>,1.5)
+grid <span class="string">on</span>;
+set(gca,<span class="string">'FontSize'</span>,12);
+ylabel(<span class="string">'Phase A MMF'</span>,<span class="string">'FontSize'</span>,8,<span class="string">'FontWeight'</span>,<span class="string">'Bold'</span>);
+set(gca,<span class="string">'xtick'</span>,[0:2:30]);
+title(<span class="string">'t = 0'</span>,<span class="string">'FontSize'</span>,10,<span class="string">'FontWeight'</span>,<span class="string">'Bold'</span>)
+
+subplot(4,1,2)
+stairs(mmfa(2,:),<span class="string">'b- '</span>,<span class="string">'Linewidth'</span>,1.5)
+grid <span class="string">on</span>;
+set(gca,<span class="string">'FontSize'</span>,12);
+ylabel(<span class="string">'Phase A MMF'</span>,<span class="string">'FontSize'</span>,8,<span class="string">'FontWeight'</span>,<span class="string">'Bold'</span>);
+set(gca,<span class="string">'xtick'</span>,[0:2:30]);
+title(<span class="string">'t = 6.67 msec'</span>,<span class="string">'FontSize'</span>,10,<span class="string">'FontWeight'</span>,<span class="string">'Bold'</span>)
+
+subplot(4,1,3)
+stairs(mmfa(3,:),<span class="string">'b- '</span>,<span class="string">'Linewidth'</span>,1.5)
+grid <span class="string">on</span>;
+set(gca,<span class="string">'FontSize'</span>,12);
+ylabel(<span class="string">'Phase A MMF'</span>,<span class="string">'FontSize'</span>,8,<span class="string">'FontWeight'</span>,<span class="string">'Bold'</span>);
+set(gca,<span class="string">'xtick'</span>,[0:2:30]);
+title(<span class="string">'t = 10 msec'</span>,<span class="string">'FontSize'</span>,10,<span class="string">'FontWeight'</span>,<span class="string">'Bold'</span>)
+
+subplot(4,1,4)
+stairs(mmfa(4,:),<span class="string">'b- '</span>,<span class="string">'Linewidth'</span>,1.5)
+grid <span class="string">on</span>;
+set(gca,<span class="string">'FontSize'</span>,12);
+xlabel(<span class="string">'Slot Number'</span>,<span class="string">'FontSize'</span>,8,<span class="string">'FontWeight'</span>,<span class="string">'Bold'</span>);
+ylabel(<span class="string">'Phase A MMF'</span>,<span class="string">'FontSize'</span>,8,<span class="string">'FontWeight'</span>,<span class="string">'Bold'</span>);
+set(gca,<span class="string">'xtick'</span>,[0:2:30]);
+title(<span class="string">'t = 13.33 msec'</span>,<span class="string">'FontSize'</span>,10,<span class="string">'FontWeight'</span>,<span class="string">'Bold'</span>)
+</pre><img vspace="5" hspace="5" src="solution_hw1_01.png" alt=""> <p>Since the MMF is due to phase-A (1 phase), it is pulsating over time. We can observe that the maximum peak-to-peak is obtained at "t=0" which is the instant where phase-A current is maximum. We can also observe that at "t = 10msec" which is the half period for a 50 Hz voltage, the waveform is completely reversed.</p><p>Q.2)</p><p>Part a)</p><p>Since the rotor rotation dirction and the MMF waveform direction produced by the stator windings are the same, the induced voltage frequency can be calculated by the relative speed (their difference) as following:</p><p><img src="solution_hw1_eq18096895394918367257.png" alt="$f$"> = <img src="solution_hw1_eq01242040197153968544.png" alt="$f_{stator}-f_{rotor}$"></p><p><img src="solution_hw1_eq18096895394918367257.png" alt="$f$"> = <img src="solution_hw1_eq16915255626256411883.png" alt="$50 - Nr*p/120$"></p><p>Nr = 1300, p = 4</p><p><img src="solution_hw1_eq18096895394918367257.png" alt="$f$"> = <img src="solution_hw1_eq06533342427874678914.png" alt="$50 - 1300*4/120$"></p><p>f = 6.66 Hz</p><p>Part b)</p><p>Using the same procedure in (a):</p><p>f = 20 Hz</p><p>Part c)</p><p>When the rotor direction is reversed, the relative speed will be the sum of two frequencies which can be calcuulated as follows:</p><p><img src="solution_hw1_eq18096895394918367257.png" alt="$f$"> = <img src="solution_hw1_eq03765805225602473032.png" alt="$f_{stator}+f_{rotor}$"></p><p><img src="solution_hw1_eq18096895394918367257.png" alt="$f$"> = <img src="solution_hw1_eq13340026227949608440.png" alt="$50 + Nr*p/120$"></p><p>Nr = 1300 p = 4</p><p><img src="solution_hw1_eq18096895394918367257.png" alt="$f$"> = <img src="solution_hw1_eq08242598018846621043.png" alt="$50 + 1300*4/120$"></p><p>f = 93.4 Hz</p><p>Part d)</p><p>Using the same procedure in (c):</p><p>f = 80 Hz</p><p class="footer"><br><a href="https://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2018a</a><br></p></div><!--
+##### SOURCE BEGIN #####
+
+%% EE362 HW#1
+
+%% NAME: _SOLUTION_
+%% STUDENT NUMBER: 123456
+
+%%
+% Q.1)
+
+% PART A
+%%
+% a) Pole number is 2 (see figure).
+pole = 2;
+
+%%
+% b) There are a total of 30 slots in one layer.
+slot_number = 30;
+
+%%
+% c) Electrical angle of one slot is: $slot-angle = 2\pi/slot-number =
+% \pi/15$
+slot_angle = 2*pi/slot_number;
+
+%%
+% d) Phase belt angle is the electrical angle for one pole of one phase
+% $Phase-belt = 2\pi/2pole/3phase = pi/3$
+phase = 3;
+phase_belt = 2*pi/(pole*phase);
+
+%%
+% e) Number of slots per phase per pole is: $q=slot-number/pole/phase=5$
+q = slot_number/(phase*pole);
+
+%%
+% f) Coil span is the angle spanning one coil:
+% $\lambda$ = $12\pi/15 = 4\pi/5$
+coil_span = pi*4/5;
+
+%%
+% g) Total number of series turns per phase:
+% $N_{ph} = turn-in-one-coil x layer x slot-number$
+%%
+% $N_{ph} = 8 x 2 x 5 = 80$
+conductor = 8;
+layer = 2;
+Nph = q*conductor*layer*(pole/2);
+
+%%
+% h) Distribution factor: $k_d = 0.9567$
+kd = sin(q*slot_angle/2)/(q*sin(slot_angle/2));
+
+%%
+% i) Pitch factor: $k_c = 0.9511$
+kc = sin(coil_span/2);
+
+%%
+% j) Winding factor: $k_w = 0.91$
+kw = kd*kc;
+
+%%
+% k) Mechanical speed of the air gap MMF: Nr = 3000 rpm
+frequency = 50;
+Nr = 120*frequency/pole;
+
+
+%%
+% PART B
+
+%%
+% Parts a, b, c, d)
+
+peak_current = 2; % Amps
+
+parts = 4;
+
+% Define MMF components
+mmfa = zeros(parts,slot_number);
+mmfb = zeros(parts,slot_number);
+mmfc = zeros(parts,slot_number);
+mmftotal = zeros(parts,slot_number);
+
+% Time array is the time instants at which MMF will be calculated
+time_array = [0,6.67e-3,10e-3,13.33e-3];
+
+for l = 1:parts
+    
+    % Define the time according the index l
+    time = time_array(l);
+    
+    % Calculate the phase currents at that time instant
+    Ia = peak_current*cos(2*pi*frequency*time);
+    Ib = peak_current*cos(2*pi*50*time-2*pi/3);
+    Ic = peak_current*cos(2*pi*50*time-4*pi/3);
+    
+    MMFa_layer1 = conductor*[Ia,Ia,Ia,Ia,Ia,0,0,0,0,0,0,0,0,0,0,-Ia,-Ia,...
+        -Ia,-Ia,-Ia,0,0,0,0,0,0,0,0,0,0];
+    MMFa_layer2 = conductor*[Ia,Ia,0,0,0,0,0,0,0,0,0,0,-Ia,-Ia,-Ia,-Ia,...
+        -Ia,0,0,0,0,0,0,0,0,0,0,Ia,Ia,Ia];
+    
+    MMFb_layer1 = conductor*[0,0,0,0,0,0,0,0,0,0,Ib,Ib,Ib,Ib,Ib,0,0,0,0,0,...
+        0,0,0,0,0,-Ib,-Ib,-Ib,-Ib,-Ib];
+    MMFb_layer2 = conductor*[0,0,0,0,0,0,0,Ib,Ib,Ib,Ib,Ib,0,0,0,0,0,0,0,0,...
+        0,0,-Ib,-Ib,-Ib,-Ib,-Ib,0,0,0];
+    
+    MMFc_layer1 = conductor*[0,0,0,0,0,-Ic,-Ic,-Ic,-Ic,-Ic,0,0,0,0,0,0,0,...
+        0,0,0,Ic,Ic,Ic,Ic,Ic,0,0,0,0,0];
+    MMFc_layer2 = conductor*[0,0,-Ic,-Ic,-Ic,-Ic,-Ic,0,0,0,0,0,0,0,0,0,0,...
+        Ic,Ic,Ic,Ic,Ic,0,0,0,0,0,0,0,0];
+    
+    for k = 1:slot_number
+        mmfa(l,k) = sum(MMFa_layer1(1:k))+sum(MMFa_layer2(1:k));
+        mmfb(l,k) = sum(MMFb_layer1(1:k))+sum(MMFb_layer2(1:k));
+        mmfc(l,k) = sum(MMFc_layer1(1:k))+sum(MMFc_layer2(1:k));
+    end
+    
+    % To get rid of the offset on the MMF waveforms, use the following
+    % routine for each phase MMF
+    average = sum(mmfa(l,:))/slot_number;
+    mmfa(l,:) = mmfa(l,:)-average;
+    average = sum(mmfb(l,:))/slot_number;
+    mmfb(l,:) = mmfb(l,:)-average;
+    average = sum(mmfc(l,:))/slot_number;
+    mmfc(l,:) = mmfc(l,:)-average;
+    
+    mmftotal(l,:) = mmfa(l,:)+mmfb(l,:)+mmfc(l,:);
+    
+end
+
+
+%%
+% Part e)
+
+subplot(4,1,1)
+stairs(mmfa(1,:),'b- ','Linewidth',1.5)
+grid on;
+set(gca,'FontSize',12);
+ylabel('Phase A MMF','FontSize',8,'FontWeight','Bold');
+set(gca,'xtick',[0:2:30]);
+title('t = 0','FontSize',10,'FontWeight','Bold')
+
+subplot(4,1,2)
+stairs(mmfa(2,:),'b- ','Linewidth',1.5)
+grid on;
+set(gca,'FontSize',12);
+ylabel('Phase A MMF','FontSize',8,'FontWeight','Bold');
+set(gca,'xtick',[0:2:30]);
+title('t = 6.67 msec','FontSize',10,'FontWeight','Bold')
+
+subplot(4,1,3)
+stairs(mmfa(3,:),'b- ','Linewidth',1.5)
+grid on;
+set(gca,'FontSize',12);
+ylabel('Phase A MMF','FontSize',8,'FontWeight','Bold');
+set(gca,'xtick',[0:2:30]);
+title('t = 10 msec','FontSize',10,'FontWeight','Bold')
+
+subplot(4,1,4)
+stairs(mmfa(4,:),'b- ','Linewidth',1.5)
+grid on;
+set(gca,'FontSize',12);
+xlabel('Slot Number','FontSize',8,'FontWeight','Bold');
+ylabel('Phase A MMF','FontSize',8,'FontWeight','Bold');
+set(gca,'xtick',[0:2:30]);
+title('t = 13.33 msec','FontSize',10,'FontWeight','Bold')
+
+
+%%
+% Since the MMF is due to phase-A (1 phase), it is pulsating over time. We
+% can observe that the maximum peak-to-peak is obtained at "t=0" which is
+% the instant where phase-A current is maximum. We can also observe that
+% at "t = 10msec" which is the half period for a 50 Hz voltage, the
+% waveform is completely reversed.
+
+
+
+
+%%
+% Q.2)
+
+%%
+% Part a)
+
+
+%%
+% Since the rotor rotation dirction and the MMF waveform direction produced
+% by the stator windings are the same, the induced voltage frequency can be
+% calculated by the relative speed (their difference) as following:
+
+%%
+% $f$ = $f_{stator}-f_{rotor}$
+
+%%
+% $f$ = $50 - Nr*p/120$
+
+%%
+% Nr = 1300, p = 4
+
+%%
+% $f$ = $50 - 1300*4/120$
+
+%%
+% f = 6.66 Hz
+
+
+%%
+% Part b)
+
+%%
+% Using the same procedure in (a):
+
+%%
+% f = 20 Hz
+
+
+%%
+% Part c)
+
+%%
+% When the rotor direction is reversed, the relative speed will be the sum 
+% of two frequencies which can be calcuulated as follows:
+
+%%
+% $f$ = $f_{stator}+f_{rotor}$
+
+%%
+% $f$ = $50 + Nr*p/120$
+
+%%
+% Nr = 1300 p = 4
+
+%%
+% $f$ = $50 + 1300*4/120$
+
+%%
+% f = 93.4 Hz
+
+
+%%
+% Part d)
+
+%%
+% Using the same procedure in (c):
+
+%%
+% f = 80 Hz
+
+
+##### SOURCE END #####
+--></body></html>
